@@ -80,7 +80,7 @@ button:active {
   pointer-events: none;
   position: relative;
   z-index: 2;
-  font-size: 25px;
+  font-size: 35px;
 }
 
 .message.show {
