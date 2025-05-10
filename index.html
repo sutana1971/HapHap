@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise Birthday Box</title>
+
+  <!-- Google Font น่ารัก ๆ -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- เชื่อมไฟล์ CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <audio id="bgMusic" src="your-song.mp3" autoplay loop></audio>
+  <audio id="clickSound" src="click-sound.mp3" preload="auto"></audio>
+  <span class="container">
+    <div class="balloon-container">
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <!-- เพิ่มกี่ลูกก็ได้ -->
+    </div>
+
+    <button id="surpriseBtn">
+      <span class="button-text">กดตรงนี้</span>
+
+    </button>
+    <span class="message">
+      <br> 
+      <p id="msg1">Happy Birthday</p>
+      <p id="msg2">ขอให้วันเกิดนี้มีความสุขมาก ๆ</p>
+    </span>
+    <p class="count" id="count1">0/1000 ครั้ง</p>
+  </span>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

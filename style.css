@@ -1,0 +1,142 @@
+/* From Uiverse.io by krlozCJ */
+body,
+html {
+  height: 100%;
+  /* กำหนดความสูง 100% */
+  margin: 0;
+  /* เอาขอบของหน้าจอออก */
+  font-family: 'Kanit', sans-serif;
+  /* ใช้ฟอนต์ Kanit */
+  display: flex;
+  /* ใช้ Flexbox */
+  justify-content: center;
+  /* จัดกลางในแนวนอน */
+  align-items: center;
+  /* จัดกลางในแนวตั้ง */
+  background: linear-gradient(#ecc0d3, #ee9ca7);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.message {
+  text-align: center;
+  color: #fff;
+}
+
+button {
+  display: grid;
+  cursor: pointer;
+  place-items: center;
+  border: 2px solid #c37f88;
+  outline: none;
+  background-color: #e49aa4;
+  width: 200px;
+  height: 100px;
+  color: #fff;
+  border-radius: 10px;
+  transition: all ease 0.1s;
+  box-shadow: 5px 7px 0px 0px #eaa4ad, 5px 7px 0px 2px #c37f88, 3px 5px 0px 2px #c37f88;
+  user-select: none;
+}
+
+button:hover {
+  background-color: #e49aa4;
+  outline: none;
+  user-select: none;
+}
+
+button:active {
+  outline: none;
+  transform: translate(3px, 5px);
+  box-shadow: 3px 5px 0px 0px #eaa4ad, 3px 5px 0px 2px #c37f88;
+  user-select: none;
+}
+
+.button-text {
+  outline: none;
+  user-select: none;
+  gap: 1px;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Kanit', sans-serif;
+}
+
+.message {
+  background-color: transparent;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
+
+.message.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.message.notshow {
+  opacity: 0;
+  pointer-events: auto;
+}
+
+.count {
+  color: white;
+  font-size: 20px;
+}
+.balloon-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* อยู่หลังปุ่มหรือข้อความ */
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 50px;
+  background-color: #ff6b81;
+  border-radius: 50%;
+  animation: float 6s linear infinite;
+  opacity: 0.8;
+  z-index: 1; /* ลูกโป่งอยู่ด้านล่างข้อความ */
+}
+
+/* เชือกของลูกโป่ง */
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -20px; /* ยาวลงมาจากบอลลูน */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+  background-color: #555;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
